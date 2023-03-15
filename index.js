@@ -46,6 +46,14 @@ let fruit2 = changeFruit(fruit);
 
 // 4. 
 
+function max (numArray) {
+  return Math.max(...numArray);
+}
+
+console.log(max([23, 4, 5, 6, 7, 34, 76, 45, 5])) // 76
+
+// OR USING THE ARRAY.MAP FUNCTION
+
 function max(numbers) {
     let maxNumber = Math.max(...numbers.map((num) => {
       return num;
@@ -53,10 +61,23 @@ function max(numbers) {
     return maxNumber;
 }
 
-console.log(max([4, 5, 10, 66, 78]));
+// console.log(max([4, 5, 10, 66, 78])); // 78
 
 
 // 5.
+
+function valTimesIndex (array) {
+  let result = [];
+  for (i =0; i < array.length; i++){
+      let newNum = array[i] * i;
+      result.push(newNum);
+  }
+  return result;
+}
+
+console.log(valTimesIndex([2, 4, 7, 27, 10])) // [ 0, 4, 14, 81, 40 ]
+
+//OR USING THE ARRAY.MAP METHOD AS AN INSTRUCTION 
 
 function valTimesIndex(numbers) {
     let result = numbers.map((num, index) => {
@@ -65,4 +86,4 @@ function valTimesIndex(numbers) {
     return result;
 }
   
-console.log(valTimesIndex([2, 5, 8, 10, 7]));
+// console.log(valTimesIndex([2, 5, 8, 10, 7])); // [ 0, 5, 16, 30, 28 ]
